@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %title Hookups(temp)
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .navbar
+      =render 'layouts/navbar'
+    %input#sidebartoggler{:type => "checkbox"}/
+    .page-wrapper
+      %label.close.toggle{:for => "sidebartoggler"} ☰
+      .page-content
+        = yield
+      .sidebar
+        %li.navslide 
+          =link_to root_path do
+            Home
+        %li.navslide
+          =link_to connections_path do
+            Connections
+        %li.navslide
+          =link_to profiles_path do
+            Profiles
+        %li.navslide
+          =link_to new_user_registration_path do
+            Sign up
+        %li.navslide 
+          =link_to new_user_session_path do
+            Sign in
