@@ -23,9 +23,9 @@
         %li.navslide
           =link_to profiles_path do
             Profiles
-        %li.navslide
-          =link_to new_user_registration_path do
-            Sign up
-        %li.navslide 
-          =link_to new_user_session_path do
-            Sign in
+        .navslide
+          = link_to remote_sign_in_path, {rel: 'sign_up_modal', :remote => true} do
+            %li{ :style => "color: #DFD1E3;"} Sign Up
+        .navslide
+          = link_to remote_sign_in_path, {rel: 'sign_in_modal', :remote => true} do
+            %li{ :style => "color: #DFD1E3;"} Sign In
