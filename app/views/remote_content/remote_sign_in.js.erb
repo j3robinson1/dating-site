@@ -1,10 +1,13 @@
 $('.sidebar').on('click', 'a', function(e) {
   e.preventDefault();
   var modalId = $(this).attr('rel');
+  console.log(modalId);
   if(modalId === "sign_in_modal") {
     $(".login-modal").html("<%= escape_javascript(render "remote_sign_in", :formats => [:html]) %>");
+    console.log("sign in");
   } else {
     $(".login-modal").html("<%= escape_javascript(render "remote_sign_up", :formats => [:html]) %>");
+    console.log("sign up");
   }
   $('#' + modalId).modal();
 });
