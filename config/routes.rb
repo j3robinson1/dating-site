@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources 'connections'
   resources 'profiles'
+  match 'navbar', to: 'navbar#navbar', via: [:get]
   devise_for :users, :controllers => {registrations: 'registrations', sessions: 'sessions'}
   match 'remote_sign_in', to: 'remote_content#remote_sign_in', via: [:get]
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,60 +1,45 @@
-@import url(//fonts.googleapis.com/css?family=Roboto:400,100);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100);
 @import "bourbon";
-@import url(//fonts.googleapis.com/css?family=The+Girl+Next+Door);
+
 $content-width:80%;
 
-.id {
-  color: #F0ECC5;
-  text-align: right;
-}
-.myprofile {
-  position: absolute;
-  left:0;
-}
-.form {
-  text-align: center;
-  display: inline-block;
-}
-input {
-  color: black !important;
-}
-.container1 {
-  position: absolute;
-  width: 240px;
-  margin-top: 6%;
-  padding-left: 7.5px;
-  padding-right: 7.5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  background-color: #5C3E18;
-  border-radius: 5%;
-  z-index:100;
-}
-.button {
-  background-color: #F2C78F;
-}
-.button:hover {
-  background-color: #CFAB7C;
-  cursor: pointer;
-  color: #E8DAC8;
-}
-#user_email, #user_password, #user_password_confirmation {
-  background-color: #E8DAC8;
-}
-.modal-body {
-  width: 240px;
-}
-.modal-header {
-  padding-top: 0 !important;
-  min-height: 0 !important;
-}
 body{
   margin:0;
   padding:0;
   list-style-type:none;
-  font-family:'Sling';
+  font-family:'Roboto', sans-serif;
   font-weight:100;
+}
+.navbar {
+  position:relative;
+  width:0px;
+  height:30px;
+  @include transition(all .5s ease);
+  background-color: #333;
+  color: white;
+}
+.link {
+  display: inline-block;
+  margin-left: 15%;
+  text-transform:uppercase;
+    opacity:.5;
+    cursor:pointer;
+    transition:all .5s ease-in;
+    &:hover {
+      opacity:1;
+      color: #29D4E8;
+    }
+}
+.close {
+  position:absolute;
+  display: inline-block;
+  top:5px;
+  right:10px;
+  cursor: pointer;
+  color: white;
+  float:right;
+  margin-right: 10;
+  @include transition(all .5s ease);
 }
 .page-content {
   @include transition(all .5s ease);
@@ -63,7 +48,7 @@ body{
   width:50%;
   margin:0 auto;
   text-align:center;
-/*   color:#333; */
+  color:#333;
   h1{
     font-weight:400;
   }
@@ -85,7 +70,7 @@ body{
 }
 
 .toggle {
-  @include position(fixed, 12.5px 0 0 12.5px);
+  @include position(fixed, 20px 0 0 20px);
   transition:all .5s ease;
   z-index:1;
   font-size:30px;
@@ -97,13 +82,14 @@ body{
     color:#29D4E8;
   }
 }
+
 .sidebar {
   transition: all .5s ease;
   @include position(fixed, 0px 0 0px -190px);
-  width:200px;
+  width:120px;
   padding:30px;
-  background:#1F0F00;
-  color: #DFD1E3;
+  background:#333;
+  color:white;
   z-index:0;
 
   ul{
@@ -117,12 +103,9 @@ body{
     opacity:.5;
     cursor:pointer;
     transition:all .5s ease-in;
-    padding-top:5px;
-    padding-bottom:5px;
-    color: #FFDCA8;
     &:hover {
       opacity:1;
-      color: #D3AFDB;
+      color: #29D4E8;
     }
   }
 }
@@ -146,4 +129,3 @@ body{
     }
   }
 }
-

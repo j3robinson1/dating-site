@@ -7,7 +7,6 @@
     = csrf_meta_tags
   %body
     .navbar
-      =render 'layouts/navbar'
     %input#sidebartoggler{:type => "checkbox"}/
     .page-wrapper
       %label.close.toggle{:for => "sidebartoggler"} ☰
@@ -18,10 +17,10 @@
           =link_to root_path do
             Home
         %li.navslide
-          =link_to connections_path do
+          =link_to navbar_path, {rel: 'connections', :remote=> true} do
             Connections
         %li.navslide
-          =link_to profiles_path do
+          =link_to navbar_path, {rel: 'profiles', :remote=> true} do
             Profiles
         = link_to remote_sign_in_path, {rel: 'sign_up_modal', :remote => true} do
           %li{ :style => "color: #DFD1E3;"} Sign Up
