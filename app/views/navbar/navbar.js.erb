@@ -4,9 +4,9 @@ $('.sidebar').on('click', 'a', function(e) {
     console.log(thisAtt);
     if(thisAtt === "connections") {
       $('.navbar').css('width', '100%')
-      $(".login-modal").html("<%= escape_javascript(render "connections_links", :formats => [:html]) %>");
+      $(".navbar").html("<%= escape_javascript(render "connections_links", :formats => [:html]) %>");
     } else {
       $('.navbar').css('width', '100%')
-      $(".login-modal").html("<%= escape_javascript(render "profiles_links", :formats => [:html]) %>");
+      $(".navbar").html("<%= escape_javascript(render "profiles_links", :formats => [:html]) %>");
   }
   });

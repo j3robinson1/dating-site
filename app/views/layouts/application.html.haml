@@ -7,15 +7,13 @@
     = csrf_meta_tags
   %body
     .navbar
+      =render 'layouts/navbar'
     %input#sidebartoggler{:type => "checkbox"}/
     .page-wrapper
       %label.close.toggle{:for => "sidebartoggler"} ☰
       .page-content
         = yield
       .sidebar
-        %li.navslide 
-          =link_to root_path do
-            Home
         %li.navslide
           =link_to navbar_path, {rel: 'connections', :remote=> true} do
             Connections
