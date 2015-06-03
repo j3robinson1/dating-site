@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources 'connections'
   resources 'profiles'
+  match 'search', to: 'profiles#search', via: [:get]
   match 'navbar', to: 'navbar#navbar', via: [:get]
   devise_for :users, :controllers => {registrations: 'registrations', sessions: 'sessions'}
   match 'remote_sign_in', to: 'remote_content#remote_sign_in', via: [:get]
